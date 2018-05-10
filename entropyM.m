@@ -12,6 +12,15 @@ function f= entropyM(X, type, n, level, showPlot)
 %
 %              Authored by , Apdullah Yayık 2018
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%EXAPLE OF USAGE
+%X=rand(1,1000)*2;
+%f= entropyM(X, 'incline', 15, 1)
+%f= entropyM(X, 'square', 15, 1)
+%f= entropyM(X, 'circle', 15, 1)
+%f= entropyM(X, 'grid', 15, 1)
+
+
 
 [x, y]=nodp(X,n); % n-degree difference plot operation
 x=normD(x');y=normD(y'); % linear normalization
