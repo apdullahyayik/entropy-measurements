@@ -14,7 +14,7 @@ ENTROPYM    Applies Entropy Measurement
     f= entropyM(X, 'square', 15, 1)
     f= entropyM(X, 'circle', 15, 1)
     f= entropyM(X, 'grid', 15, 1)
-# Cite
+# Cite (in review)
     @Article{Yayık2018,
        author="Yayık, Apdullah
        and Kutlu, Yakup
