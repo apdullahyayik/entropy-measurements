@@ -142,7 +142,7 @@ function [x,y]=nodp(X,n)
 % performs difference plot operation throught the vgiven vector X
 % n: degree of difference plot
 
-    for i=1:n
+for i=1:n
         x=X(1:end-1);
         y=X(2:end);
         if n==1
