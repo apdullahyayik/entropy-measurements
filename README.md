@@ -9,11 +9,11 @@ ENTROPYM    Applies Entropy Measurement
                 f..................number samples in each type
 
 # USAGE
-X=rand(1,1000)*2;
-f= entropyM(X, 'incline', 15, 1)
-f= entropyM(X, 'square', 15, 1)
-f= entropyM(X, 'circle', 15, 1)
-f= entropyM(X, 'grid', 15, 1)
+    X=rand(1,1000)*2;
+    f= entropyM(X, 'incline', 15, 1)
+    f= entropyM(X, 'square', 15, 1)
+    f= entropyM(X, 'circle', 15, 1)
+    f= entropyM(X, 'grid', 15, 1)
 
     @Article{Yayık2018,
        author="Yayık, Apdullah
@@ -34,5 +34,5 @@ f= entropyM(X, 'grid', 15, 1)
               level...........size of grid matrix (level x level)
               showP...........show image option (1 show, 0 not)
 # USAGE
-X=rand(1,1000)
-im=tstbi(X, [1,2,3], 100, 1)
+    X=rand(1,1000)
+    im=tstbi(X, [1,2,3], 100, 1)
