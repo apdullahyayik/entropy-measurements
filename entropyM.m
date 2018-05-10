@@ -1,19 +1,20 @@
-function f= entropyM(X, type, level, showPlot)
+function f= entropyM(X, type, n, level, showPlot)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %ENTROPYM    Applies Entropy Measurement
 %
 %                X .................input data vactor
+%                n..................degree of difference plot
 %                type...............measurement type ('circle, 'grid', 'incline' or 'square')
 %                level..............number of circles
 %                showPlot...........0->no show, 1 show
-%                f..................number samples in each type
+%                f..................features, number samples in each type
 %
 %
 %              Authored by , Apdullah Yayık 2018
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-[x, y]=sodp(X);
-x=normD(x');y=normD(y');
+[x, y]=nodp(X,n); % n-degree difference plot operation
+x=normD(x');y=normD(y'); % linear normalization
 
 switch showPlot
     case 1
@@ -23,7 +24,7 @@ end
 switch type
     case 'circle'
         mn=1;mx=1;
-        c=(mx-mn)/2; 
+        c=(mx-mn)/2;
         [~,rhos]=cart2pol(x-c,y-c);
         f=zeros(1,level);
         for i=1:level;
@@ -64,13 +65,13 @@ switch type
                 end
             end
         end
-      switch showPlot
-          case 1 
-              line([1,-1], [1,1], 'LineStyle','-',  'Color',[.8 .8 .8])
-              line([1,1], [-1,1], 'LineStyle','-',  'Color',[.8 .8 .8])
+        switch showPlot
+            case 1
+                line([1,-1], [1,1], 'LineStyle','-',  'Color',[.8 .8 .8])
+                line([1,1], [-1,1], 'LineStyle','-',  'Color',[.8 .8 .8])
         end
-        f=reshape(P,1,level*level);
-        
+%         f=reshape(P,1,level*level); % uncomment if output is desired as a vector 
+        f=P;
     case 'incline'
         mn=-1;mx=1;
         w=(mx-mn)/level;
@@ -94,17 +95,17 @@ switch type
                 end
             else
                 r=find(y<y2);
-                f(j)=length(r); 
+                f(j)=length(r);
             end
-            j=j+1; 
+            j=j+1;
             switch showPlot
                 case 1
                     axis([mn-w mx+w mn-w mx+w])
             end
-        end 
+        end
         f(end)=length(x)-sum(f);
- 
- case 'square' 
+        
+    case 'square'
         mx=1;mn=-1;
         w=(mx-mn)/level;
         for i=1:level
@@ -118,31 +119,32 @@ switch type
             end
             switch showPlot
                 case 1
-                      hold on
-                      line([w1 w2],w1*ones(1,2),'LineStyle','-', 'Color',[.8 .8 .8]),
-                      line([w1 w2],w2*ones(1,2),'LineStyle','-', 'Color',[.8 .8 .8]),
-                      line(w1*ones(1,2),[w1 w2],'LineStyle','-', 'Color',[.8 .8 .8]),
-                      line(w2*ones(1,2),[w1 w2],'LineStyle','-', 'Color',[.8 .8 .8]),
-            end 
-       end         
+                    hold on
+                    line([w1 w2],w1*ones(1,2),'LineStyle','-', 'Color',[.8 .8 .8]),
+                    line([w1 w2],w2*ones(1,2),'LineStyle','-', 'Color',[.8 .8 .8]),
+                    line(w1*ones(1,2),[w1 w2],'LineStyle','-', 'Color',[.8 .8 .8]),
+                    line(w2*ones(1,2),[w1 w2],'LineStyle','-', 'Color',[.8 .8 .8]),
+            end
+        end
+end
+end
+
+function [x,y]=nodp(X,n)
+% performs difference plot operation throught the vgiven vector X
+% n: degree of difference plot
+
+    for i=1:n
+        x=X(1:end-1);
+        y=X(2:end);
+        if n==1
+            break
+        end
+        X=y-x;
     end
 end
 
-
-function [x, y]= sodp(X)
-% second-order difference plot
-
-N=length(X);
-x=zeros(1,N-2);y=x;
-for i=1:N-2;
-    x(i)=X(i+2)-X(i+1);
-    y(i)=X(i+1)-X(i);
-end
-end
-
-
 function X=normD(X)
-% normalization
+% peforms linear normalization
 
 sizeX=size(X);
 minn=zeros(1, size(X,2));
@@ -157,4 +159,3 @@ for ii=1:sizeX(1)
     end
 end
 end
-
