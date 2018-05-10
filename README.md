@@ -8,7 +8,7 @@ ENTROPYM    Applies Entropy Measurement
                 showPlot...........0->no show, 1 show
                 f..................number samples in each type
 
-# USAGE
+## USAGE
     X=rand(1,1000)*2;
     f= entropyM(X, 'incline', 15, 1)
     f= entropyM(X, 'square', 15, 1)
