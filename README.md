@@ -29,6 +29,7 @@ ENTROPYM Applies Entropy Measurement
 
 # TIME SERIES-TO-BE-AN-IMAGE
 TSTBI transforms given a time-serie into an grid entropy image to be used for input representation in ConvNET
+
               X...............time series
               n...............degree vector (first :R, second: G, third :B)
               level...........size of grid matrix (level x level)
