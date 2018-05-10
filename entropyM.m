@@ -33,7 +33,6 @@ function f= entropyM(X, type, n, level, showPlot)
        % abstract="Our study concerns with automated predicting of congestive heart failure (CHF) through the analysis of electrocardiography (ECG) signals. A novel machine learning approach, regularized hessenberg decomposition based extreme learning machine (R-HessELM), and four number of feature models, squared, circled, inclined and grid entropy measurements, were introduced and used as a basis for prediction of CHF. This study proved that inclined entropy measurements are the features which well represent characteristics of ECG signals and R-HessELM approach on these features achieved overall accuracy of 98.49%"
        % }
 
-
 [x, y]=nodp(X,n); % n-degree difference plot operation
 x=normD(x');y=normD(y'); % linear normalization
 
