@@ -1,6 +1,6 @@
 function im=tstbi(X, n, level, showP)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%TSTBI    Transforms given atime-serie into an grid entropy image for input representation 
+%TSTBI    Transforms given time-series into a grid entropy image for input representation 
 %         in ConvNET
 %
 %               X...............time series
