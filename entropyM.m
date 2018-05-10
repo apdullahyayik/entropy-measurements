@@ -65,11 +65,10 @@ switch type
         end
     case 'grid'
         mn=-1; mx=1;
-        w=(mx-mn)/level; %karenin eni
+        w=(mx-mn)/level; 
         P=zeros(level,level);
         for i=1:level
             for j=1:level
-                %P2 her karede ka� tane nokta oldu�unu tutar.
                 if j==level
                     P(i,j) = length( find( x>=(mn+w*(j-1)) & x<=(mn+w *j) & y>=(mn+w*(i-1)) & y<=(mn+w*i) ) );
                 elseif i==level
@@ -150,7 +149,7 @@ end
 end
 
 function [x,y]=nodp(X,n)
-% performs difference plot operation throught the vgiven vector X
+% performs difference plot operation throught given vector X
 % n: degree of difference plot
 
 for i=1:n
