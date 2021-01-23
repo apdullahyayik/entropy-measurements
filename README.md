@@ -1,5 +1,5 @@
 ### Entropy Measurements
-ENTROPY Applies Entropy Measurement
+entropyM Applies Entropy Measurement
 
     X .................input data vactor
     type...............measurement type ('circle, 'grid', 'incline' or 'square')
