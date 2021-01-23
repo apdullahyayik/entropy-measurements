@@ -1,5 +1,5 @@
-# TIME-SERIES ANALYSIS
-ENTROPYM Applies Entropy Measurement
+## Entropy Measurements
+ENTROPY Applies Entropy Measurement
 
                 X .................input data vactor
                 type...............measurement type ('circle, 'grid', 'incline' or 'square')
@@ -7,13 +7,13 @@ ENTROPYM Applies Entropy Measurement
                 showPlot...........0->no show, 1 show
                 f..................number samples in each type
 
-# Usage
+## Usage
     X=rand(1,1000)*2;
     f= entropyM(X, 'incline', 15, 1)
     f= entropyM(X, 'square', 15, 1)
     f= entropyM(X, 'circle', 15, 1)
     f= entropyM(X, 'grid', 15, 1)
-# Cite (in review)
+## Cite (in review)
     @Article{Yayık2018,
        author="Yayık, Apdullah
        and Kutlu, Yakup
